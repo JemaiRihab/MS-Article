@@ -15,32 +15,11 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class ArticleServImp extends ServiceGeneric <Article, Long> implements ArticleServ {
     private final ArticleRepo articleRepo;
-    @Autowired
-    ArticleClient articleClient;
+
     @Override
     public Article save(Article entity) {
         entity.setCreatedAt(LocalDate.now());
         return articleRepo.save(entity);
     }
 
-    @Override
-    public ArticleDto get(Long id){
-        Article article=articleRepo.findById(id).orElse(null);
-        StockDto  stockDto =  articleClient.getStock(article.getIdStock());
-
-        return mapToArticle( article , stockDto);
-    }
-
-
-    private ArticleDto mapToArticle(Article article , StockDto stock) {
-        ArticleDto articleDto = new ArticleDto();
-        articleDto.setStock(stock);
-        articleDto.setName(article.getName());
-        articleDto.setQte(article.getQte());
-        articleDto.setCreatedAt(article.getCreatedAt());
-        articleDto.setUpdatedAt(article.getUpdatedAt());
-        articleDto.setId(article.getId());
-
-        return articleDto;
-    }
 }
