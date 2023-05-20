@@ -16,10 +16,8 @@ public class ArticleMapper {
         articleDto.setCreatedAt(articleDto.getCreatedAt());
         articleDto.setUpdatedAt(articleDto.getUpdatedAt());
         articleDto.setId(articleDto.getId());
-
         return articleDto;
     }
-
     private static ArticleDto mapToArticle(Article article) {
         ArticleDto articleDto = ArticleDto.builder().build();
         articleDto.setId(article.getId());

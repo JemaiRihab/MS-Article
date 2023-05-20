@@ -1,6 +1,6 @@
 package com.sagemcom.msarticle.dto;
 
-import com.sagemcom.msarticle.entities.BaseEntity;
+import com.sagemcom.entities.BaseEntity;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -10,11 +10,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ArticleDto {
-    private Long id;
+public class ArticleDto extends BaseEntity {
     private String name;
-    private LocalDate createdAt;
-    private LocalDate updatedAt;
     private int qte;
     private StockDto stock;
 }

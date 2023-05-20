@@ -1,5 +1,6 @@
 package com.sagemcom.msarticle.dto;
 
+import com.sagemcom.entities.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +12,6 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StockDto {
-    private LocalDate createdAt;
-    private LocalDate updatedAt;
+public class StockDto extends BaseEntity {
     private String zone;
 }

@@ -1,5 +1,6 @@
 package com.sagemcom.msarticle.entities;
 
+import com.sagemcom.entities.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import javax.persistence.Entity;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Article extends BaseEntity{
+public class Article extends BaseEntity {
     private String name;
     private int qte;
     private Long idStock;
